@@ -1,7 +1,6 @@
 echo "# xzdc" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/AveQY/xzdc.git
-git push -u origin main
+小贼单词
+==
+作者：AveQY
+--
+
