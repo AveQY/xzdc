@@ -1,0 +1,323 @@
+require "import"
+import "android.app.*"
+import "android.os.*"
+import "android.widget.*"
+import "android.view.*"
+import "fun"
+import "toast/toa"
+import "Animation/cartoon"
+import "function"
+import "AndLua"
+import "Recite.ButtonFunction"
+
+activity.setTheme(R.Theme_Black)
+layout_Button={
+  LinearLayout;
+  orientation="vertical";
+  layout_height="fill";
+  id="back";
+  background="/storage/emulated/0/小贼单词/data/1_1.bin";
+  {
+    LinearLayout;
+    layout_height="80%w";
+    layout_width="fill";
+    gravity="center";
+    orientation="vertical";
+    {
+      TextView;
+      text="";
+      layout_marginTop="0dp";
+      layout_width="150dp";
+      gravity="center";
+      id="mTextView2";
+    };
+    {
+      LinearLayout;
+      layout_width="match_parent";
+      gravity="center";
+      layout_marginTop="15dp";
+      layout_height="40dp";
+      layout_marginRight="10dp";
+      layout_marginLeft="10dp";
+      {
+        ImageView;
+        layout_height="match_parent";
+        layout_width="25dp";
+        id="Previous";
+        layout_marginLeft="25dp";
+        src="res/ic_fast_rewind_black_24dp.png",
+      };
+      {
+        TextView;
+        text="";
+        layout_height="40dp";
+        layout_marginTop="0dp";
+        gravity="center";
+        layout_marginBottom="3dp";
+        layout_width="match_parent";
+        textSize="22sp";
+        layout_marginLeft="50dp";
+        id="hq";
+        layout_marginRight="50dp";
+        textColor="#0";
+      };
+      {
+        ImageView;
+        layout_height="match_parent";
+        layout_width="25dp";
+        layout_marginRight="25dp";
+        id="next";
+        src="res/ic_fast_forward_black_24dp.png",
+      };
+    };
+  };
+  {
+    LinearLayout;
+    orientation="vertical";
+    gravity="center";
+    layout_width="match_parent";
+    {
+      CardView;
+      layout_height="55dp";
+      layout_marginLeft="5dp";
+      layout_marginRight="5dp";
+      layout_width="match_parent";
+      radius="10dp";
+      id="first";
+      {
+        LinearLayout;
+        layout_width="match_parent";
+        layout_height="match_parent";
+        {
+          TextView;
+          text="A.";
+          layout_height="match_parent";
+          textSize="23sp";
+          textColor="#0";
+          layout_width="55dp";
+          gravity="center";
+        };
+        {
+          TextView;
+          layout_height="match_parent";
+          textSize="23sp";
+          gravity="center";
+          layout_width="match_parent";
+          textColor="#0";
+          id="Text1";
+        };
+      };
+    };
+    {
+      CardView;
+      radius="10dp";
+      layout_marginTop="10dp";
+      layout_marginLeft="5dp";
+      layout_marginRight="5dp";
+      layout_width="match_parent";
+      layout_height="55dp";
+      id="second";
+      {
+        LinearLayout;
+        layout_width="match_parent";
+        layout_height="match_parent";
+        {
+          TextView;
+          text="B.";
+          layout_height="match_parent";
+          textSize="23sp";
+          textColor="#0";
+          layout_width="55dp";
+          gravity="center";
+        };
+        {
+          TextView;
+          layout_height="match_parent";
+          textSize="23sp";
+          gravity="center";
+          layout_width="match_parent";
+          textColor="#0";
+          id="Text2";
+        };
+      };
+    };
+    {
+      CardView;
+      radius="10dp";
+      layout_marginTop="10dp";
+      layout_marginLeft="5dp";
+      layout_marginRight="5dp";
+      layout_width="match_parent";
+      layout_height="55dp";
+      id="third";
+      {
+        LinearLayout;
+        layout_width="match_parent";
+        layout_height="match_parent";
+        {
+          TextView;
+          text="C.";
+          layout_height="match_parent";
+          textSize="23sp";
+          textColor="#0";
+          layout_width="55dp";
+          gravity="center";
+        };
+        {
+          TextView;
+          layout_height="match_parent";
+          textSize="23sp";
+          gravity="center";
+          layout_width="match_parent";
+          textColor="#0";
+          id="Text3";
+        };
+      };
+    };
+    {
+      CardView;
+      radius="10dp";
+      layout_marginTop="10dp";
+      layout_marginLeft="5dp";
+      layout_marginRight="5dp";
+      layout_width="match_parent";
+      layout_height="55dp";
+      id="fourth";
+      {
+        LinearLayout;
+        layout_width="match_parent";
+        layout_height="match_parent";
+        {
+          TextView;
+          text="D.";
+          layout_height="match_parent";
+          textSize="23sp";
+          textColor="#0";
+          layout_width="55dp";
+          gravity="center";
+        };
+        {
+          TextView;
+          layout_height="match_parent";
+          textSize="23sp";
+          gravity="center";
+          layout_width="match_parent";
+          textColor="#0";
+          id="Text4";
+        };
+      };
+    };
+  };
+  {
+    LinearLayout;
+    layout_width="match_parent";
+    gravity="center|bottom";
+    layout_marginTop="10dp";
+    layout_height="20%w";
+    {
+      Button;
+      text="重新开始";
+      layout_height="55dp";
+      layout_width="45%w";
+      gravity="center";
+      id="Restart";
+      layout_marginRight="10dp";
+    };
+    {
+      Button;
+      text="继续上次";
+      layout_height="55dp";
+      layout_width="45%w";
+      gravity="Center";
+      id="Continue";
+      layout_marginLeft="10dp";
+    };
+  };
+};
+
+activity.setContentView(loadlayout(layout_Button))
+activity.ActionBar.hide()
+
+background_Recite()
+CircleButton(Previous,0x72FFFFFF,50)
+CircleButton(next,0x72FFFFFF,50)
+CircleButton(Restart,0x00FFFFFF,50)
+CircleButton(Continue,0x00FFFFFF,50)
+设置字体加粗(hq)
+
+file_butrecite()
+now()
+time_set()
+now_math()
+now_eideword()
+
+Previous.onClick=function()
+  now()
+  缩放(Previous)
+  Previous_but()
+  now_math()
+  now_word()
+end
+next.onClick=function()
+  now()
+  缩放(next)
+  next_but()
+  now_math()
+  now_word()
+end
+hq.onClick=function()
+  查看中文()
+end
+hq.onLongClick=function()
+  修改单词()
+end
+Restart.onClick=function()
+  缩放(Restart)
+  io.open("/sdcard/小贼单词/data/butric/math","w"):write("1"):close()
+  toa("已重置！","res/ic_memory_black_24dp.png",0xFFFF6064)
+  now_math()
+  start()
+end
+Continue.onClick=function()
+  缩放(Continue)
+  继续(hq)
+  now_math()
+end
+mTextView2.onClick=function()
+  缩放(mTextView2)
+  list_words()
+end
+Text1.onClick=function()
+  缩放(Text1)
+  text1()
+end
+Text2.onClick=function()
+  缩放(Text2)
+  text2()
+end
+Text3.onClick=function()
+  缩放(Text3)
+  text3()
+end
+Text4.onClick=function()
+  缩放(Text4)
+  text4()
+end
+
+time_end=0
+ti=Ticker()
+ti.start()
+ti.Period=1000
+ti.onTick=function()
+  time_end=time_end+1
+end
+function onKeyDown(code,event)
+  if string.find(tostring(event),"KEYCODE_BACK") ~= nil then
+    if time_end < 300 then
+      toast_set()
+     else
+      activity.finish()
+    end
+    return true
+  end
+end
