@@ -1,0 +1,26 @@
+--名称
+appname="小贼单词"
+--版本号
+appver="1.1"
+--版本
+appcode="999"
+--SDK
+appsdk="16"
+--包名
+packagename="com.AveQY.xzdc"
+--调试模式
+debugmode=false
+--应用权限
+user_permission={
+  "ACCESS_NETWORK_STATE",
+  "CHANGE_NETWORK_STATE",
+  "DOWNLOAD_WITHOUT_NOTIFICATION",
+  "INTERNET",
+  "READ_EXTERNAL_STORAGE",
+  "WAKE_LOCK",
+  "WRITE_EXTERNAL_STORAGE",
+}
+--跳过编译
+skip_compilation={
+
+}
